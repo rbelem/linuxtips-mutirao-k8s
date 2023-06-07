@@ -14,7 +14,8 @@
       "source <(kubectl completion bash)",
       "alias k=kubectl",
       "complete -o default -F __start_kubectl k",
-      "source <(kind completion bash)"
+      "source <(kind completion bash)",
+      "source <(podman completion bash)"
     ],
     "scripts": {
       "test": [
