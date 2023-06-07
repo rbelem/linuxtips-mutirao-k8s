@@ -16,7 +16,8 @@
       "complete -o default -F __start_kubectl k",
       "source <(kind completion bash)",
       "source <(podman completion bash)",
-      "[ -n $(podman ps --noheading -f name=kind-control-plane) ] && podman restart kind-control-plane >/dev/null"
+      "KIND_NODES=$(kind get nodes -A)",
+      "[ -n \"$KIND_NODES\" ] && podman restart $KIND_NODES >/dev/null"
     ],
     "scripts": {
       "test": [
