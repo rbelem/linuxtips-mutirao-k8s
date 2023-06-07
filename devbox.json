@@ -15,7 +15,8 @@
       "alias k=kubectl",
       "complete -o default -F __start_kubectl k",
       "source <(kind completion bash)",
-      "source <(podman completion bash)"
+      "source <(podman completion bash)",
+      "[ -n $(podman ps --noheading -f name=kind-control-plane) ] && podman restart kind-control-plane >/dev/null"
     ],
     "scripts": {
       "test": [
